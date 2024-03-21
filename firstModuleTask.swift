@@ -52,3 +52,42 @@ if let letters = readLine(), !letters.isEmpty {
         print(result)
     }
 }
+
+
+func formatLicensePlate(_ s: String, _ n: Int) -> String {
+
+    let cleanedString = s.replacingOccurrences(of: "-", with: "")
+
+    let uppercaseString = cleanedString.uppercased()
+
+    var result = ""
+    var counter = 0
+
+    for char in uppercaseString.reversed() {
+        if counter == n {
+            result.insert("-", at: result.startIndex)
+            counter = 0
+        }
+        result.insert(char, at: result.startIndex)
+        counter += 1
+    }
+
+    return result
+}
+
+//License Plate
+print("Введите номер DMV:")
+
+if let inputString = readLine() {
+    
+    print("Введите длины группы: ")
+    if let inputLength = readLine(), let groupLength = Int(inputLength){
+        
+        let formattedLicensePlate = formatLicensePlate(inputString, groupLength)
+        
+        print(formattedLicensePlate)
+        
+    }
+}else {
+    print("Ошибка ввода. Пожалуйста, введите номер DMV.")
+}
