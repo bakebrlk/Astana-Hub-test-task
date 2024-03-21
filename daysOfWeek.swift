@@ -1,5 +1,5 @@
 //
-//  main.swift
+//  daysOfWeek.swift
 //  swiftProject
 //
 //  Created by bakebrlk on 21.03.2024.
