@@ -7,8 +7,6 @@
 
 import Foundation
 
-let taskScore: Int = 100
-var myScore: Int = taskScore
-let result = taskScore + myScore
+var bestFootballPlayer = "Cristiano"
 
-print(taskScore, myScore, result)
+print(bestFootballPlayer)
