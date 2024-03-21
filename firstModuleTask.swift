@@ -75,7 +75,7 @@ func formatLicensePlate(_ s: String, _ n: Int) -> String {
     return result
 }
 
-//License Plate
+// License Plate
 print("Введите номер DMV:")
 
 if let inputString = readLine() {
@@ -91,3 +91,26 @@ if let inputString = readLine() {
 }else {
     print("Ошибка ввода. Пожалуйста, введите номер DMV.")
 }
+
+// digit
+print("Введите число:")
+if let input = readLine(), var number = Int(input), number > 9 {
+    
+    var numbers: [Int] = []
+    
+    while number != 0 {
+        numbers.append(number%10)
+        number /= 10
+    }
+    numbers.sort()
+    
+    var indexOfMid = numbers.count/2
+    
+    if numbers.count%2 == 0 {
+        indexOfMid -= 1
+    }
+    print(numbers[indexOfMid])
+}else {
+    print("Ошибка ввода. Пожалуйста, введите целое число.")
+}
+
